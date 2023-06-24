@@ -24,9 +24,10 @@ pipeline {
             }
         }
         stage('Deploy') {
+            agent kubenode
             steps {
                 script {
-                    withKubeConfig([credentialsId: 'akskubeconfig', serverUrl: 'https://networknuts-dns-kg6hiwja.hcp.centralindia.azmk8s.io']) {
+                    withKubeConfig([credentialsId: 'azure-kube', serverUrl: 'https://networknuts-dns-1bhsn95y.hcp.centralindia.azmk8s.io']) {
                         sh 'kubectl apply -f deployment.yml'
                 }
             }
