@@ -24,7 +24,7 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent kubenode
+            agent { label 'kubenode' }
             steps {
                 script {
                     withKubeConfig([credentialsId: 'azure-kube', serverUrl: 'https://networknuts-dns-1bhsn95y.hcp.centralindia.azmk8s.io']) {
