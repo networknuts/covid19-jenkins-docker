@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                        sh 'docker run -d -p 8000:8000 ${dockerImage}:${dockerTag}'
+                        sh 'docker run -d -p 8000:8000 aryansr/jenkins-covid-app:v3'
             }
         }
     }
