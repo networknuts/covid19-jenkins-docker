@@ -13,7 +13,7 @@ pipeline {
                 script {
                     // Defining Docker Image and Tag variables
                     def dockerImage = "aryansr/jenkins-covid-app"
-                    def dockerTag = "latest"
+                    def dockerTag = "v3"
                     def dockerCredentialsId = "aryan-docker"
                     // Starting the Build Process
                     def dockerBuild = docker.build("${dockerImage}:${dockerTag}",'.')
